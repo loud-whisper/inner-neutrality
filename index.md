@@ -1,4 +1,4 @@
-# The Path to Inner Neutrality: A Philosophical and Psychological Exploration
+# Journey within: No Passport required
 
 ## Introduction
 
@@ -199,3 +199,14 @@ Therefore, the path of transformation involves constant challenge, self-observat
 Because your very sense of self may be woven around these stories and patterns, the instinct will often be to fight hard to protect them when they are questioned or threatened by new experiences or insights. This can feel destabilizing, shaking you to your core.
 
 Yet, in the midst of this internal turbulence, remember the fundamental truth highlighted by many wisdom traditions: you remain the observer, the potential modifier, and ultimately the steward responsible for this inner world. This demanding, often uncomfortable, but ultimately liberating process is the path to authentic inner sovereignty and submission to a higher truth. It is how you learn to be unshaken—not by building higher defensive walls, but by realizing you are the boundless, aware space in which all experiences arise and pass, grounded in the ultimate Reality. This is the heart of inner neutrality, or the tranquil soul at peace.
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74BXJ8BSWH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74BXJ8BSWH');
+</script>
