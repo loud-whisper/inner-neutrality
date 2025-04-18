@@ -168,8 +168,8 @@ A common point of confusion arises here: Does focusing on the action (Karma/Amal
 The motivation simply shifts from *personal gain* (ego-driven attachment to results like praise, profit, specific outcomes) to other sources:
 
 *   The inherent value or necessity of the action.
-*   A sense of duty (Dharma / fulfilling religious obligations).
-*   Dedication to a higher purpose or the well-being of the whole (seeking God's pleasure).
+*   A sense of duty (Dharma / fulfilling obligations).
+*   Dedication to a higher purpose or the well-being of the whole.
 *   The simple joy of skillful execution or learning (Ihsan).
 
 For example, a student preparing for an exam can focus entirely on understanding the material and studying effectively (the action), deriving satisfaction from the learning process itself and fulfilling their responsibility, rather than being solely fixated on achieving a specific grade (the result). While purely selfless action is a high ideal, the principle encourages acting with full commitment and excellence *because it is the right action* or *done for God's sake*, rather than *only* because of the reward it might bring. This allows for diligent effort (*Jihad* in the broader sense of striving) and high standards, free from the anxiety, pressure, and potential ethical compromises that often accompany attachment to specific outcomes.
