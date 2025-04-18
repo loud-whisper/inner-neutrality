@@ -1,15 +1,3 @@
----
-title: "The Path to Inner Neutrality: A Philosophical and Psychological Exploration"
-author: "V M"
-date: "2025"
-mainfont: "Noto Serif Devanagari"
-fontsize: 11pt
-geometry: margin=1in
-toc: true
-header-includes:
-  - \usepackage{pdflscape}
----
-
 # The Path to Inner Neutrality: A Philosophical and Psychological Exploration
 
 ## Introduction
