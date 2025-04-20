@@ -1,7 +1,15 @@
+# ---------- site & theme ----------
 remote_theme: pages-themes/cayman@v0.2.0
 
-plugins:
-  - jekyll-remote-theme      # keeps the Cayman theme working
-  - jekyll-seo-tag           # emits SEO + verification meta tags
+# These two lines tell Jekyll (and the sitemap plugin) the public URL
+url: "https://loud-whisper.github.io"   # ← no trailing slash
+baseurl: "/inner-neutrality"            # ← repo name, leading slash
 
+# ---------- plugins ----------
+plugins:
+  - jekyll-remote-theme    # keeps the Cayman theme working
+  - jekyll-seo-tag         # adds SEO + Google‑verification meta tags
+  - jekyll-sitemap         # auto‑creates /sitemap.xml on every build
+
+# ---------- Google Search Console ----------
 google_site_verification: "PvvW0mLDW7WvV6ttqxu-76YGRguZB2jeSs3GqYW1MbQ"
