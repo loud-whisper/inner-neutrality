@@ -4,4 +4,4 @@ plugins:
   - jekyll-remote-theme      # needed for the remote theme
   - jekyll-seo-tag           # needed to emit the meta tag
 
-google-site-verification content: "haeA8HWPYrfnd9nO1BbQyyL30qgGaoehCa5VHs96QiY"
+google_site_verification content: "haeA8HWPYrfnd9nO1BbQyyL30qgGaoehCa5VHs96QiY"
