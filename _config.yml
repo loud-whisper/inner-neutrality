@@ -1,7 +1,7 @@
 remote_theme: pages-themes/cayman@v0.2.0
 
 plugins:
-  - jekyll-remote-theme      # needed for the remote theme
-  - jekyll-seo-tag           # needed to emit the meta tag
+  - jekyll-remote-theme      # keeps the Cayman theme working
+  - jekyll-seo-tag           # emits SEO + verification meta tags
 
-google_site_verification content: "haeA8HWPYrfnd9nO1BbQyyL30qgGaoehCa5VHs96QiY"
+google_site_verification: "haeA8HMPYrFnd9nO1bBQyyL3OggGaoehCa5VHs96Qjy"
