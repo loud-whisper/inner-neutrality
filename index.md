@@ -1,3 +1,13 @@
+---
+layout: default          # tells Jekyll to wrap the page in the theme’s layout
+title: Journey within    # (optional) a nicer page title
+---
+
+# Journey within: No Passport required
+...
+
+
+
 # Journey within: No Passport required
 
 ## Introduction
