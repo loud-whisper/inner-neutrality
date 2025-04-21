@@ -1,18 +1,16 @@
 ---
 layout: default
-title: "Journey within: No Passport required"
+title: "Journey within: No Passport required" # Or your new title
+author: "V M"
+date: "2025"
+# mainfont: "Noto Serif Devanagari" # These are for PDF, not needed for web
+# fontsize: 11pt
+# geometry: margin=1in
+toc: true # This might or might not work depending on theme support, but is harmless
+# header-includes: # Removed this section
+#   - \usepackage{pdflscape}
 ---
-<!--
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YOUR_ID'); // Make sure YOUR_ID is correct
-</script>
--->
 
 # Journey within: No Passport required
 ## Introduction
