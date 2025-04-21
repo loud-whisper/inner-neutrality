@@ -2,10 +2,6 @@
 layout: default
 title: "Journey within: No Passport required"
 ---
-
-# Journey within: No Passport required
-## Introduction
-...
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"></script>
 <script>
@@ -15,6 +11,11 @@ title: "Journey within: No Passport required"
 
   gtag('config', 'G-YOUR_ID'); // Make sure YOUR_ID is correct
 </script>
+
+# Journey within: No Passport required
+## Introduction
+...
+
 
 This document traces a conceptual journey toward the ultimate goal of neutrality—an inner state of clarity, detachment, and equanimity. Most of us navigate the world assuming our perspective is correct; our opinions feel like facts, and our truth feels like *the* truth. But how can we know if our worldview genuinely reflects reality, or if it's largely shaped by years of societal conditioning, the media we consume, our education, and ingrained habits of thought? When faced with challenges or deep stress, the tendency is often to fall back on automatic coping mechanisms rather than conscious examination.
 
