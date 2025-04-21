@@ -8,13 +8,13 @@ baseurl: "/inner-neutrality"
 plugins:
   - jekyll-remote-theme
   # - jekyll-seo-tag  # Commented out this line
-  - jekyll-sitemap
+  # - jekyll-sitemap   # <--- COMMENT THIS ONE OUT NOW
 
 # GitHub Pages needs this key if you define plugins
 whitelist:
   - jekyll-remote-theme
   # - jekyll-seo-tag  # Commented out this line
-  - jekyll-sitemap
+  # - jekyll-sitemap   # <--- COMMENT THIS ONE OUT NOW
 
 # ---------- Google Search Console ----------
 google_site_verification: "PvvW0mLDW7WvV6ttqxu-76YGRguZB2jeSs3GqYW1MbQ"
