@@ -2,6 +2,7 @@
 layout: default
 title: "Journey within: No Passport required"
 ---
+<!--
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"></script>
 <script>
@@ -11,6 +12,7 @@ title: "Journey within: No Passport required"
 
   gtag('config', 'G-YOUR_ID'); // Make sure YOUR_ID is correct
 </script>
+-->
 
 # Journey within: No Passport required
 ## Introduction
