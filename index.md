@@ -11,7 +11,7 @@ toc: true # This might or might not work depending on theme support, but is harm
 #   - \usepackage{pdflscape}
 ---
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74BXJ8BSWH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
