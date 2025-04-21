@@ -6,7 +6,15 @@ title: "Journey within: No Passport required"
 # Journey within: No Passport required
 ## Introduction
 ...
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-YOUR_ID'); // Make sure YOUR_ID is correct
+</script>
 
 This document traces a conceptual journey toward the ultimate goal of neutrality—an inner state of clarity, detachment, and equanimity. Most of us navigate the world assuming our perspective is correct; our opinions feel like facts, and our truth feels like *the* truth. But how can we know if our worldview genuinely reflects reality, or if it's largely shaped by years of societal conditioning, the media we consume, our education, and ingrained habits of thought? When faced with challenges or deep stress, the tendency is often to fall back on automatic coping mechanisms rather than conscious examination.
 
@@ -207,12 +215,4 @@ Because your very sense of self may be woven around these stories and patterns, 
 Yet, in the midst of this internal turbulence, remember the fundamental truth highlighted by many wisdom traditions: you remain the destroyer, the preserver, and ultimately the creator responsible for your inner world. This demanding, often uncomfortable, but ultimately liberating process is the path to authentic inner sovereignty and submission to a higher truth. It is how you learn to be unshaken—not by building higher defensive walls, but by realizing you are the boundless, aware space in which all experiences arise and pass, grounded in the ultimate Reality. This is the heart of inner neutrality, or the tranquil soul at peace.
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-74BXJ8BSWH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-74BXJ8BSWH');
-</script>
