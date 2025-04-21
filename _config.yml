@@ -1,5 +1,5 @@
 # ---------- site & theme ----------
-remote_theme: pages-themes/cayman@v0.2.0
+remote_theme: pages-themes/midnight@v0.2.0
 
 url: "https://loud-whisper.github.io"
 baseurl: "/inner-neutrality"
