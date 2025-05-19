@@ -21,9 +21,11 @@ toc: true # This might or might not work depending on theme support, but is harm
 </script>
 
 # Journey within: No Passport required
+
 ## Introduction
 ...
-
+If you strictly want audio, here is the link below (although reading is more comprehensive)
+#<iframe width="560" height="315" src="https://www.youtube.com/embed/KSek_LumkSw?si=2tBUVnoY9XwNd7dP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In the next 60 seconds the internet will serve up 5 million Google searches, 70 million WhatsApp messages, and 34 years of TikTok video. You chose to spend those same 60 seconds opening this webpage. That single decision puts you in a statistical minority: someone willing to direct attention rather than lease it out. Most of us are so buried in chasing the next thing, the things we don't have, that we totally forget about the incredible stuff we do have and completely take it for granted.
 
