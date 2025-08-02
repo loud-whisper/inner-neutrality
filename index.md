@@ -21,11 +21,17 @@ toc: true # This might or might not work depending on theme support, but is harm
 </script>
 
 {% raw %}
-<!-- START: MARKMAP - FINAL SOLUTION -->
+<!-- MARKMAP FINAL SOLUTION -->
 
-<!-- 1. The Data Block -->
-<!-- The Markdown is stored here, completely hidden from the server's processor. -->
-<script type="text/template" id="markmap-data">
+<!-- 1. This is an empty anchor. Our script will place the mind map here. -->
+<div id="mindmap-anchor"></div>
+
+<script>
+// Wait for the entire page to be ready
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Step A: Define all our data inside the script, completely safe from the server.
+    const markdownContent = `
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
@@ -41,43 +47,42 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Action & Detachment](#action-motivation-and-detachment)
 - [Advanced Perspectives](#advanced-perspectives-on-the-path)
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
+`;
+    const optionsAsJson = `{
+        "fit": true,
+        "initialExpandLevel": 2,
+        "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
+    }`;
+
+    // Step B: Create the mind map element and its contents dynamically.
+    const mindmapContainer = document.createElement('div');
+    mindmapContainer.className = 'markmap';
+    mindmapContainer.style.height = '500px';
+    mindmapContainer.style.border = '1px solid #444';
+    mindmapContainer.style.borderRadius = '8px';
+    mindmapContainer.style.marginBottom = '2em';
+    mindmapContainer.style.background = '#161b22';
+
+    const optionsScript = document.createElement('script');
+    optionsScript.type = 'application/json';
+    optionsScript.textContent = optionsAsJson;
+
+    mindmapContainer.appendChild(optionsScript);
+    mindmapContainer.appendChild(document.createTextNode(markdownContent));
+
+    // Step C: Place the newly created element onto the page at our anchor point.
+    const anchor = document.getElementById('mindmap-anchor');
+    anchor.appendChild(mindmapContainer);
+
+    // Step D: Now that the perfect element exists, load the autoloader.
+    // This guarantees it will find a clean, correctly-structured target.
+    const autoloaderScript = document.createElement('script');
+    autoloaderScript.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
+    document.head.appendChild(autoloaderScript);
+});
 </script>
 
-<!-- 2. The Configuration and Target Div -->
-<!-- The autoloader will find this div and use the options inside. -->
-<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
-  <script type="application/json">
-  {
-    "fit": true,
-    "initialExpandLevel": 2,
-    "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
-  }
-  </script>
-</div>
-
-<!-- 3. The Injection and Loading Script -->
-<script>
-  // Wait for the document to be ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the raw Markdown text from the data block
-    const markdownData = document.getElementById('markmap-data').textContent;
-    
-    // Find the target div for the map
-    const targetDiv = document.querySelector('.markmap');
-    
-    // Inject the Markdown data as plain text into the target div
-    // The JSON options script will be preserved.
-    targetDiv.appendChild(document.createTextNode(markdownData));
-
-    // Now, dynamically create and load the autoloader script.
-    // This guarantees it runs AFTER the div has been populated.
-    const autoloader = document.createElement('script');
-    autoloader.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
-    document.head.appendChild(autoloader);
-  });
-</script>
-
-<!-- END: MARKMAP -->
+<!-- END MARKMAP -->
 {% endraw %}
 # Journey within: No Passport required
 
