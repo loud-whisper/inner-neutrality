@@ -19,7 +19,70 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
+<!-- START: Interactive Mind Map -->
+<style>
+/* This CSS styles the mind map container */
+#markmap-container {
+  border: 1px solid #444; /* A subtle border */
+  border-radius: 8px;      /* Rounded corners */
+  margin-bottom: 2em;      /* Space below the map */
+  padding: 0.5em;          /* Padding inside the border */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* A soft shadow effect */
+  background: #1c2128;     /* A dark background matching GitHub's theme */
+}
+#markmap {
+  display: block;
+  width: 100%;
+  height: 500px;
+}
+</style>
 
+<!-- 1. The Container for the Mind Map -->
+<div id="markmap-container">
+  <svg id="markmap"></svg>
+</div>
+
+<!-- 2. Load the Markmap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15.0/dist/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0/dist/browser.min.js"></script>
+
+<!-- 3. Your Custom Script to Generate the Map -->
+<script>
+  (function() {
+    const { Transformer } = markmap;
+    const { Markmap, loadCSS, loadJS } = markmap;
+    const transformer = new Transformer();
+
+    // The Markdown structure for your mind map.
+    // The links (#...) have been created from your actual headings.
+    const markdown = `
+# [Journey to Inner Neutrality](#journey-within-no-passport-required)
+- [Introduction](#introduction)
+- [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
+- [Frameworks for Growth](#frameworks-for-self-understanding-and-growth)
+  - [Chakra System](#the-chakra-system)
+  - [Maslow's Hierarchy](#maslows-hierarchy-of-needs)
+  - [Carl Jung's Interpretation](#carl-jungs-psychological-interpretation)
+  - [Chakras & Sins](#bridging-traditions-chakras-and-seven-deadly-sins)
+  - [Taoism](#taoism-harmony-flow-and-non-striving)
+  - [Stoicism & Gita](#stoicism-and-the-gita---parallel-paths-of-wisdom)
+  - [Islamic Perspectives](#islamic-perspectives-submission-trust-and-inner-striving)
+- [Practical Steps](#practical-steps-toward-inner-balance)
+- [Action & Detachment](#action-motivation-and-detachment)
+- [Advanced Perspectives](#advanced-perspectives-on-the-path)
+- [Final Realization](#final-realization-neutrality-and-the-inner-battle)
+`;
+
+    const { root, features } = transformer.transform(markdown);
+    const { styles, scripts } = transformer.getUsedAssets(features);
+    if (styles) loadCSS(styles);
+    if (scripts) loadJS(scripts, { getMarkmap: () => Markmap });
+
+    // Render the mind map in the SVG element.
+    Markmap.create('#markmap', undefined, root);
+  })();
+</script>
+<!-- END: Interactive Mind Map -->
 # Journey within: No Passport required
 
 If you strictly want audio, here is the link below (although reading is more comprehensive)
