@@ -20,17 +20,11 @@ toc: true # This might or might not work depending on theme support, but is harm
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
 {% raw %}
-<!-- MARKMAP FINAL SOLUTION v2 -->
+<!-- MARKMAP - FINAL ARCHITECTURE -->
 
-<!-- 1. This is an empty anchor. Our script will place the mind map here. -->
-<div id="mindmap-anchor"></div>
-
-<script>
-// Wait for the entire page to be ready
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Step A: Define all our data inside the script.
-    const markdownContent = `
+<!-- 1. The Data Source -->
+<!-- The Markdown is stored here in a template, completely hidden from the server. -->
+<script type="text/template" id="markmap-data">
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
@@ -46,42 +40,35 @@ document.addEventListener('DOMContentLoaded', function() {
 - [Action & Detachment](#action-motivation-and-detachment)
 - [Advanced Perspectives](#advanced-perspectives-on-the-path)
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
-`;
-    const optionsAsJson = `{
-        "fit": true,
-        "initialExpandLevel": 2,
-        "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
-    }`;
+</script>
 
-    // Step B: Create the mind map element and its contents dynamically.
-    const mindmapContainer = document.createElement('div');
-    mindmapContainer.className = 'markmap';
-    mindmapContainer.style.height = '500px';
-    mindmapContainer.style.border = '1px solid #444';
-    mindmapContainer.style.borderRadius = '8px';
-    mindmapContainer.style.marginBottom = '2em';
-    mindmapContainer.style.background = '#161b22';
+<!-- 2. The Stage -->
+<!-- A styled, empty container for the mind map. The browser will give it a stable size on page load. -->
+<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
+  <!-- The autoloader will find these options inside the container -->
+  <script type="application/json">
+  {
+    "fit": true,
+    "initialExpandLevel": 2,
+    "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
+  }
+  </script>
+</div>
 
-    // *** THE FIX: These two lines solve the layering issue. ***
-    mindmapContainer.style.position = 'relative'; // This is required for z-index to work.
-    mindmapContainer.style.zIndex = '10';         // This brings the element to the front.
+<!-- 3. The Controller Script -->
+<script>
+  // Wait for the page layout to be stable
+  document.addEventListener('DOMContentLoaded', function() {
+    // Populate: Get the Markdown text and inject it into the .markmap div
+    const markdownData = document.getElementById('markmap-data').textContent;
+    const targetDiv = document.querySelector('.markmap');
+    targetDiv.appendChild(document.createTextNode(markdownData));
 
-    const optionsScript = document.createElement('script');
-    optionsScript.type = 'application/json';
-    optionsScript.textContent = optionsAsJson;
-
-    mindmapContainer.appendChild(optionsScript);
-    mindmapContainer.appendChild(document.createTextNode(markdownContent));
-
-    // Step C: Place the newly created element onto the page at our anchor point.
-    const anchor = document.getElementById('mindmap-anchor');
-    anchor.appendChild(mindmapContainer);
-
-    // Step D: Now that the perfect element exists, load the autoloader.
-    const autoloaderScript = document.createElement('script');
-    autoloaderScript.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
-    document.head.appendChild(autoloaderScript);
-});
+    // Trigger: Now that the stage is set, call the autoloader.
+    const autoloader = document.createElement('script');
+    autoloader.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
+    document.head.appendChild(autoloader);
+  });
 </script>
 
 <!-- END MARKMAP -->
