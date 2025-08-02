@@ -19,9 +19,8 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
-
 {% raw %}
-<!-- MARKMAP FINAL SOLUTION -->
+<!-- MARKMAP FINAL SOLUTION v2 -->
 
 <!-- 1. This is an empty anchor. Our script will place the mind map here. -->
 <div id="mindmap-anchor"></div>
@@ -30,7 +29,7 @@ toc: true # This might or might not work depending on theme support, but is harm
 // Wait for the entire page to be ready
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Step A: Define all our data inside the script, completely safe from the server.
+    // Step A: Define all our data inside the script.
     const markdownContent = `
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
@@ -63,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
     mindmapContainer.style.marginBottom = '2em';
     mindmapContainer.style.background = '#161b22';
 
+    // *** THE FIX: These two lines solve the layering issue. ***
+    mindmapContainer.style.position = 'relative'; // This is required for z-index to work.
+    mindmapContainer.style.zIndex = '10';         // This brings the element to the front.
+
     const optionsScript = document.createElement('script');
     optionsScript.type = 'application/json';
     optionsScript.textContent = optionsAsJson;
@@ -75,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
     anchor.appendChild(mindmapContainer);
 
     // Step D: Now that the perfect element exists, load the autoloader.
-    // This guarantees it will find a clean, correctly-structured target.
     const autoloaderScript = document.createElement('script');
     autoloaderScript.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
     document.head.appendChild(autoloaderScript);
