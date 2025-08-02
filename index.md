@@ -22,11 +22,18 @@ toc: true # This might or might not work depending on theme support, but is harm
 {% raw %}
 <!-- START: Interactive Mind Map -->
 
-<!-- 1. Load the Markmap Autoloader script. This does all the work. -->
-<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<!-- 1. Configuration for the Mind Map -->
+<!-- This tells Markmap how to display the diagram -->
+<script type="application/json" id="markmap-options">
+{
+  "fit": true,
+  "initialExpandLevel": 2,
+  "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
+}
+</script>
 
-<!-- 2. Create a div with the class "markmap". The autoloader will find this and convert it. -->
-<!-- All your Markdown content goes directly inside this div. -->
+<!-- 2. The Container for the Mind Map -->
+<!-- The autoloader script below will find this div and convert its content into a map -->
 <div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
@@ -44,6 +51,9 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Advanced Perspectives](#advanced-perspectives-on-the-path)
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
 </div>
+
+<!-- 3. The Markmap Autoloader Script -->
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
 
 <!-- END: Interactive Mind Map -->
 {% endraw %}
