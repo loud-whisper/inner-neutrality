@@ -22,11 +22,14 @@ toc: true # This might or might not work depending on theme support, but is harm
 {% raw %}
 <!-- START: Interactive Mind Map -->
 
-<!-- 1. The Container for the Mind Map. -->
-<!-- All settings and content now go INSIDE this div. -->
-<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22; position: relative; z-index: 1;">
+<!-- 
+  The definitive fix is the markdown="0" attribute.
+  This tells the GitHub Pages server to ignore the content inside this div,
+  allowing the Markmap script in the browser to process it correctly.
+-->
+<div class="markmap" markdown="0" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22; position: relative; z-index: 1;">
 
-  <!-- A. Configuration options are now INSIDE the div. -->
+  <!-- Markmap configuration options -->
   <script type="application/json">
   {
     "fit": true,
@@ -35,7 +38,7 @@ toc: true # This might or might not work depending on theme support, but is harm
   }
   </script>
 
-  <!-- B. The Markdown content for the map. -->
+  <!-- The raw Markdown content for the map -->
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
@@ -53,7 +56,7 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
 </div>
 
-<!-- 2. The Markmap Autoloader Script (placed after the div) -->
+<!-- The Markmap Autoloader Script -->
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
 
 <!-- END: Interactive Mind Map -->
