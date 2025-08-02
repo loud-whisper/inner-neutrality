@@ -21,26 +21,13 @@ toc: true # This might or might not work depending on theme support, but is harm
 </script>
 {% raw %}
 <!-- START: Interactive Mind Map -->
-<style>
-#markmap-container {
-  border: 1px solid #444; border-radius: 8px; margin-bottom: 2em;
-  padding: 0.5em; box-shadow: 0 4px 12px rgba(0,0,0,0.2); background: #1c2128;
-}
-#markmap { display: block; width: 100%; height: 500px; }
-</style>
 
-<div id="markmap-container"><svg id="markmap"></svg></div>
+<!-- 1. Load the Markmap Autoloader script. This does all the work. -->
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15.0/dist/browser.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0/dist/browser.min.js"></script>
-
-<script>
-  // Use window.onload to ensure ALL resources are loaded first
-  window.onload = () => {
-    const { Transformer, Markmap, loadCSS, loadJS } = window.markmap;
-    const transformer = new Transformer();
-    
-    const markdown = `
+<!-- 2. Create a div with the class "markmap". The autoloader will find this and convert it. -->
+<!-- All your Markdown content goes directly inside this div. -->
+<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
@@ -56,16 +43,8 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Action & Detachment](#action-motivation-and-detachment)
 - [Advanced Perspectives](#advanced-perspectives-on-the-path)
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
-`;
+</div>
 
-    const { root, features } = transformer.transform(markdown);
-    const assets = transformer.getUsedAssets(features);
-    if (assets.styles) loadCSS(assets.styles);
-    if (assets.scripts) loadJS(assets.scripts, { getMarkmap: () => Markmap });
-    
-    Markmap.create('#markmap', undefined, root);
-  };
-</script>
 <!-- END: Interactive Mind Map -->
 {% endraw %}
 # Journey within: No Passport required
