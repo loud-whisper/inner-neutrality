@@ -20,12 +20,10 @@ toc: true # This might or might not work depending on theme support, but is harm
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
 {% raw %}
-<!-- MARKMAP - FINAL ARCHITECTURE -->
-
-<!-- 1. The Data Source -->
-<!-- The Markdown is stored here in a template, completely hidden from the server. -->
-<script type="text/template" id="markmap-data">
-# [Journey to Inner Neutrality](#journey-within-no-passport-required)
+<!-- MARKMAP - CORRECTED VERSION -->
+<div class="markmap" style="width: 100%; height: 600px; border: 1px solid #444; border-radius: 8px; margin: 20px 0; background: #161b22;">
+<script type="text/template">
+# Journey to Inner Neutrality
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
 - [Frameworks for Growth](#frameworks-for-self-understanding-and-growth)
@@ -41,37 +39,18 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Advanced Perspectives](#advanced-perspectives-on-the-path)
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
 </script>
-
-<!-- 2. The Stage -->
-<!-- A styled, empty container for the mind map. The browser will give it a stable size on page load. -->
-<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
-  <!-- The autoloader will find these options inside the container -->
-  <script type="application/json">
-  {
-    "fit": true,
-    "initialExpandLevel": 2,
-    "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
-  }
-  </script>
+<script type="application/json">
+{
+  "fit": true,
+  "initialExpandLevel": 2,
+  "maxWidth": 300,
+  "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
+}
+</script>
 </div>
 
-<!-- 3. The Controller Script -->
-<script>
-  // Wait for the page layout to be stable
-  document.addEventListener('DOMContentLoaded', function() {
-    // Populate: Get the Markdown text and inject it into the .markmap div
-    const markdownData = document.getElementById('markmap-data').textContent;
-    const targetDiv = document.querySelector('.markmap');
-    targetDiv.appendChild(document.createTextNode(markdownData));
-
-    // Trigger: Now that the stage is set, call the autoloader.
-    const autoloader = document.createElement('script');
-    autoloader.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
-    document.head.appendChild(autoloader);
-  });
-</script>
-
-<!-- END MARKMAP -->
+<!-- Load markmap autoloader -->
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
 {% endraw %}
 # Journey within: No Passport required
 
