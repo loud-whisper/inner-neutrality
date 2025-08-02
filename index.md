@@ -19,10 +19,10 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
-
-<iframe src="{{ '/mindmap.html' | relative_url }}" 
-        width="100%" 
-        height="600px" 
+<!-- Final Iframe Solution -->
+<iframe src="mindmap.html"
+        width="100%"
+        height="500px"
         style="border: 1px solid #444; border-radius: 8px; background: #161b22;">
 </iframe>
 
