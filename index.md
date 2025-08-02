@@ -19,11 +19,11 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
-<!-- Final Iframe Solution -->
-<iframe src="mindmap.html"
+<!-- Static Mind Map Iframe Solution -->
+<iframe src="static-mindmap.html"
         width="100%"
-        height="500px"
-        style="border: 1px solid #444; border-radius: 8px; background: #161b22;">
+        height="600px"
+        style="border: 1px solid #444; border-radius: 8px; background: #1a1a2e;">
 </iframe>
 
 # Journey within: No Passport required
