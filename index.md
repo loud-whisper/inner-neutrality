@@ -22,19 +22,20 @@ toc: true # This might or might not work depending on theme support, but is harm
 {% raw %}
 <!-- START: Interactive Mind Map -->
 
-<!-- 1. Configuration for the Mind Map -->
-<!-- This tells Markmap how to display the diagram -->
-<script type="application/json" id="markmap-options">
-{
-  "fit": true,
-  "initialExpandLevel": 2,
-  "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
-}
-</script>
+<!-- 1. The Container for the Mind Map. -->
+<!-- All settings and content now go INSIDE this div. -->
+<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22; position: relative; z-index: 1;">
 
-<!-- 2. The Container for the Mind Map -->
-<!-- The autoloader script below will find this div and convert its content into a map -->
-<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
+  <!-- A. Configuration options are now INSIDE the div. -->
+  <script type="application/json">
+  {
+    "fit": true,
+    "initialExpandLevel": 2,
+    "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
+  }
+  </script>
+
+  <!-- B. The Markdown content for the map. -->
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
@@ -52,7 +53,7 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
 </div>
 
-<!-- 3. The Markmap Autoloader Script -->
+<!-- 2. The Markmap Autoloader Script (placed after the div) -->
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
 
 <!-- END: Interactive Mind Map -->
