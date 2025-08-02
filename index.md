@@ -51,6 +51,13 @@ toc: true # This might or might not work depending on theme support, but is harm
     <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
 </body>
 </html>
+
+<iframe src="{{ '/mindmap.html' | relative_url }}" 
+        width="100%" 
+        height="600px" 
+        style="border: 1px solid #444; border-radius: 8px; background: #161b22;">
+</iframe>
+
 # Journey within: No Passport required
 
 If you strictly want audio, here is the link below (although reading is more comprehensive)
