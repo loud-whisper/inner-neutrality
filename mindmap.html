@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Inner Neutrality Mind Map</title>
-  <style>
-    /* Ensure body fills the viewport with no margins */
-    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
-  </style>
+    <meta charset="utf-8">
+    <title>Inner neutrality Mind Map</title>
+    <style>
+        /* Ensure body fills the viewport with no margin */
+        body { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; }
+        #mindmap-anchor { width: 100%; height: 100%; }
+    </style>
 </head>
 <body>
-  <!-- This is an empty anchor. Our script will build and place the mind map here. -->
-  <div id="mindmap-anchor" style="width: 100%; height: 100%;"></div>
+    <!-- This is an empty anchor. Our script will build and place the mind map here. -->
+    <div id="mindmap-anchor"></div>
 
-  <script>
-    // Wait for the page to be fully stable
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // --- All data is defined safely inside the script ---
-        const markdownContent = `
----
-markmap:
-  color: ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
----
-# [Journey to Inner Neutrality](https://loud-whisper.github.io/inner-neutrality/){target="_parent"}
-- [Introduction](https://loud-whisper.github.io/inner-neutrality/#introduction){target="_parent"}
-- [The Stories We Tell Ourselves](https://loud-whisper.github.io/inner-neutrality/#the-stories-we-tell-ourselves-coping-and-inner-worlds){target="_parent"}
-- [Frameworks for Growth](https://loud-whisper.github.io/inner-neutrality/#frameworks-for-self-understanding-and-growth){target="_parent"}
-  - [Chakra System](https://loud-whisper.github.io/inner-neutrality/#the-chakra-system){target="_parent"}
-  - [Maslow's Hierarchy](https://loud-whisper.github.io/inner-neutrality/#maslows-hierarchy-of-needs){target="_parent"}
-  - [Carl Jung's Interpretation](https://loud-whisper.github.io/inner-neutrality/#carl-jungs-psychological-interpretation){target="_parent"}
-  - [Chakras & Sins](https://loud-whisper.github.io/inner-neutrality/#bridging-traditions-chakras-and-seven-deadly-sins){target="_parent"}
-  - [Taoism](https://loud-whisper.github.io/inner-neutrality/#taoism-harmony-flow-and-non-striving){target="_parent"}
-  - [Stoicism & Gita](https://loud-whisper.github.io/inner-neutrality/#stoicism-and-the-gita---parallel-paths-of-wisdom){target="_parent"}
-  - [Islamic Perspectives](https://loud-whisper.github.io/inner-neutrality/#islamic-perspectives-submission-trust-and-inner-striving){target="_parent"}
-- [Practical Steps](https://loud-whisper.github.io/inner-neutrality/#practical-steps-toward-inner-balance){target="_parent"}
-- [Action & Detachment](https://loud-whisper.github.io/inner-neutrality/#action-motivation-and-detachment){target="_parent"}
-- [Advanced Perspectives](https://loud-whisper.github.io/inner-neutrality/#advanced-perspectives-on-the-path){target="_parent"}
-- [Final Realization](https://loud-whisper.github.io/inner-neutrality/#final-realization-neutrality-and-the-inner-battle){target="_parent"}
-`;
+    <script>
+        // Wait for the page to be fully stable
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- All data is defined safely inside the script ---
+            const markdownContent = `# Journey to Inner Neutrality
+- [Introduction](https://loud-whisper.github.io/inner-neutrality/#introduction)
+- [The Stories We Tell Ourselves](https://loud-whisper.github.io/inner-neutrality/#the-stories-we-tell-ourselves-coping-and-inner-worlds)
+- [Frameworks for Growth](https://loud-whisper.github.io/inner-neutrality/#frameworks-for-self-understanding-and-growth)
+  - [Chakra System](https://loud-whisper.github.io/inner-neutrality/#the-chakra-system)
+  - [Maslow's Hierarchy](https://loud-whisper.github.io/inner-neutrality/#maslows-hierarchy-of-needs)
+  - [Carl Jung's Interpretation](https://loud-whisper.github.io/inner-neutrality/#carl-jungs-psychological-interpretation)
+  - [Chakras & Sins](https://loud-whisper.github.io/inner-neutrality/#bridging-traditions-chakras-and-seven-deadly-sins)
+  - [Taoism](https://loud-whisper.github.io/inner-neutrality/#taoism-harmony-flow-and-non-striving)
+  - [Stoicism & Gita](https://loud-whisper.github.io/inner-neutrality/#stoicism-and-the-gita---parallel-paths-of-wisdom)
+  - [Islamic Perspectives](https://loud-whisper.github.io/inner-neutrality/#islamic-perspectives-submission-trust-and-inner-striving)
+- [Practical Steps](https://loud-whisper.github.io/inner-neutrality/#practical-steps-toward-inner-balance)
+- [Action & Detachment](https://loud-whisper.github.io/inner-neutrality/#action-motivation-and-detachment)  
+- [Advanced Perspectives](https://loud-whisper.github.io/inner-neutrality/#advanced-perspectives-on-the-path)
+- [Final Realization](https://loud-whisper.github.io/inner-neutrality/#final-realization-neutrality-and-the-inner-battle)`;
 
-        // --- Dynamically create the elements ---
-        const mindmapContainer = document.createElement('div');
-        mindmapContainer.className = 'markmap';
-        mindmapContainer.style.width = '100%';
-        mindmapContainer.style.height = '100%';
-        mindmapContainer.textContent = markdownContent;
+            // --- Dynamically create the elements ---
+            const mindmapContainer = document.getElementById('div');
+            mindmapContainer.className = 'markmap';
+            mindmapContainer.style.width = '100%';
+            mindmapContainer.style.height = '100%';
+            mindmapContainer.textContent = markdownContent;
 
-        // Place the constructed element onto the page
-        document.getElementById('mindmap-anchor').appendChild(mindmapContainer);
+            // --- Place the constructed element onto the page
+            document.getElementById('mindmap-anchor').appendChild(mindmapContainer);
 
-        // --- Load the autoloader script LAST ---
-        const autoloaderScript = document.createElement('script');
-        autoloaderScript.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
-        document.head.appendChild(autoloaderScript);
-    });
-  </script>
+            // --- Load the autoloader script LAST ---
+            const autoloaderScript = document.createElement('script');
+            autoloaderScript.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
+            autoloaderScript.onload = function() {
+                console.log('Markmap autoloader loaded successfully');
+            };
+            autoloaderScript.onerror = function() {
+                console.error('Failed to load markmap autoloader');
+                // Fallback: show as plain text
+                document.getElementById('mindmap-anchor').innerHTML = 
+                    '<pre style="color: white; padding: 20px; font-family: monospace; overflow: auto; height: 100%; background: #0d1117;">' + 
+                    markdownContent + '</pre>';
+            };
+            document.head.appendChild(autoloaderScript);
+        });
+    </script>
 </body>
 </html>
