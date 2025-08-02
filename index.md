@@ -19,6 +19,7 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
+
 {% raw %}
 <!-- START: Interactive Mind Map -->
 <style>
@@ -83,6 +84,7 @@ toc: true # This might or might not work depending on theme support, but is harm
 </script>
 <!-- END: Interactive Mind Map -->
 {% endraw %}
+
 # Journey within: No Passport required
 
 If you strictly want audio, here is the link below (although reading is more comprehensive)
