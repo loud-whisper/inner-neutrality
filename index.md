@@ -20,10 +20,11 @@ toc: true # This might or might not work depending on theme support, but is harm
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
 {% raw %}
-<!-- START: Interactive Mind Map -->
+<!-- START: MARKMAP - FINAL SOLUTION -->
 
-<!-- 1. The Data Block: The Markdown source is hidden from the server here. -->
-<script type="text/markdown" id="mindmap-data" style="display: none;">
+<!-- 1. The Data Block -->
+<!-- The Markdown is stored here, completely hidden from the server's processor. -->
+<script type="text/template" id="markmap-data">
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
@@ -41,54 +42,41 @@ toc: true # This might or might not work depending on theme support, but is harm
 - [Final Realization](#final-realization-neutrality-and-the-inner-battle)
 </script>
 
-<!-- 2. The Container: This empty div is where the map will be rendered. -->
-<div id="markmap-container" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;"></div>
+<!-- 2. The Configuration and Target Div -->
+<!-- The autoloader will find this div and use the options inside. -->
+<div class="markmap" style="height: 500px; border: 1px solid #444; border-radius: 8px; margin-bottom: 2em; background: #161b22;">
+  <script type="application/json">
+  {
+    "fit": true,
+    "initialExpandLevel": 2,
+    "color": ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
+  }
+  </script>
+</div>
 
-<!-- 3. The Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15.0/dist/browser.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0/dist/browser.min.js"></script>
-
-<!-- 4. The Renderer Script: This connects the data to the container. -->
+<!-- 3. The Injection and Loading Script -->
 <script>
-(function() {
-  // Wait for all resources to be fully loaded
-  window.addEventListener('load', function() {
-    try {
-      const { Transformer, Markmap } = window.markmap;
-      const transformer = new Transformer();
+  // Wait for the document to be ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the raw Markdown text from the data block
+    const markdownData = document.getElementById('markmap-data').textContent;
+    
+    // Find the target div for the map
+    const targetDiv = document.querySelector('.markmap');
+    
+    // Inject the Markdown data as plain text into the target div
+    // The JSON options script will be preserved.
+    targetDiv.appendChild(document.createTextNode(markdownData));
 
-      // Find the data block and get its raw text content
-      const markdown = document.getElementById('mindmap-data').textContent;
-      
-      // Find the empty container where the map will be placed
-      const container = document.getElementById('markmap-container');
-
-      // Create an SVG element to hold the map
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.style.width = '100%';
-      svg.style.height = '100%';
-      container.appendChild(svg);
-      
-      const { root, features } = transformer.transform(markdown);
-      
-      const options = {
-        fit: true,
-        initialExpandLevel: 2,
-        color: ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"]
-      };
-
-      // Create the map inside the SVG element we just made
-      Markmap.create(svg, options, root);
-
-    } catch (e) {
-      // If something goes wrong, log it to the console
-      console.error("Error creating Markmap:", e);
-    }
+    // Now, dynamically create and load the autoloader script.
+    // This guarantees it runs AFTER the div has been populated.
+    const autoloader = document.createElement('script');
+    autoloader.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
+    document.head.appendChild(autoloader);
   });
-})();
 </script>
 
-<!-- END: Interactive Mind Map -->
+<!-- END: MARKMAP -->
 {% endraw %}
 # Journey within: No Passport required
 
