@@ -19,20 +19,19 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
-{% raw %}
-<!-- Container for the mindmap -->
-<div id="markmap-container" style="width: 100%; height: 600px; border: 1px solid #444; border-radius: 8px; margin: 20px 0; background: #161b22;"></div>
-
-<!-- Load required scripts -->
-<script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.3"></script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15.3"></script>
-
-<script>
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', function() {
-  // Markdown content
-  const markdown = `# Journey to Inner Neutrality
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { margin: 0; padding: 0; background: #161b22; }
+        #mindmap { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <div class="markmap" id="mindmap">
+        <script type="text/template">
+# Journey to Inner Neutrality
 - [Introduction](#introduction)
 - [The Stories We Tell Ourselves](#the-stories-we-tell-ourselves-coping-and-inner-worlds)
 - [Frameworks for Growth](#frameworks-for-self-understanding-and-growth)
@@ -46,25 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 - [Practical Steps](#practical-steps-toward-inner-balance)
 - [Action & Detachment](#action-motivation-and-detachment)
 - [Advanced Perspectives](#advanced-perspectives-on-the-path)
-- [Final Realization](#final-realization-neutrality-and-the-inner-battle)`;
-
-  // Transform markdown to markmap data
-  const { root } = markmap.transform(markdown);
-  
-  // Create the markmap
-  const container = document.getElementById('markmap-container');
-  const mm = markmap.Markmap.create(container, {
-    color: ["#88c0d0", "#81a1c1", "#5e81ac", "#b48ead", "#a3be8c", "#ebcb8b", "#d08770"],
-    maxWidth: 300,
-    initialExpandLevel: 2
-  });
-  
-  // Render the mindmap
-  mm.setData(root);
-  mm.fit();
-});
-</script>
-{% endraw %}
+- [Final Realization](#final-realization-neutrality-and-the-inner-battle)
+        </script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+</body>
+</html>
 # Journey within: No Passport required
 
 If you strictly want audio, here is the link below (although reading is more comprehensive)
