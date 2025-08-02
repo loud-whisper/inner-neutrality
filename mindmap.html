@@ -2,22 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Inner neutrality Mind Map</title>
+    <title>Inner Neutrality Mind Map</title>
     <style>
-        /* Ensure body fills the viewport with no margin */
-        body { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; }
-        #mindmap-anchor { width: 100%; height: 100%; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background: #0d1117;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .markmap { 
+            width: 100%; 
+            height: 100%; 
+        }
+        .fallback {
+            color: #c9d1d9;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .fallback h1 { color: #58a6ff; }
+        .fallback ul { margin-left: 20px; }
+        .fallback a { color: #58a6ff; text-decoration: none; }
+        .fallback a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <!-- This is an empty anchor. Our script will build and place the mind map here. -->
-    <div id="mindmap-anchor"></div>
-
-    <script>
-        // Wait for the page to be fully stable
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- All data is defined safely inside the script ---
-            const markdownContent = `# Journey to Inner Neutrality
+    <!-- Direct markmap approach -->
+    <div class="markmap">
+        <script type="text/template">
+# Journey to Inner Neutrality
 - [Introduction](https://loud-whisper.github.io/inner-neutrality/#introduction)
 - [The Stories We Tell Ourselves](https://loud-whisper.github.io/inner-neutrality/#the-stories-we-tell-ourselves-coping-and-inner-worlds)
 - [Frameworks for Growth](https://loud-whisper.github.io/inner-neutrality/#frameworks-for-self-understanding-and-growth)
@@ -29,35 +43,62 @@
   - [Stoicism & Gita](https://loud-whisper.github.io/inner-neutrality/#stoicism-and-the-gita---parallel-paths-of-wisdom)
   - [Islamic Perspectives](https://loud-whisper.github.io/inner-neutrality/#islamic-perspectives-submission-trust-and-inner-striving)
 - [Practical Steps](https://loud-whisper.github.io/inner-neutrality/#practical-steps-toward-inner-balance)
-- [Action & Detachment](https://loud-whisper.github.io/inner-neutrality/#action-motivation-and-detachment)  
+- [Action & Detachment](https://loud-whisper.github.io/inner-neutrality/#action-motivation-and-detachment)
 - [Advanced Perspectives](https://loud-whisper.github.io/inner-neutrality/#advanced-perspectives-on-the-path)
-- [Final Realization](https://loud-whisper.github.io/inner-neutrality/#final-realization-neutrality-and-the-inner-battle)`;
+- [Final Realization](https://loud-whisper.github.io/inner-neutrality/#final-realization-neutrality-and-the-inner-battle)
+        </script>
+    </div>
 
-            // --- Dynamically create the elements ---
-            const mindmapContainer = document.getElementById('div');
-            mindmapContainer.className = 'markmap';
-            mindmapContainer.style.width = '100%';
-            mindmapContainer.style.height = '100%';
-            mindmapContainer.textContent = markdownContent;
+    <!-- Fallback content (shows if markmap fails) -->
+    <div id="fallback" class="fallback" style="display: none;">
+        <h1>Journey to Inner Neutrality</h1>
+        <ul>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#introduction">Introduction</a></li>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#the-stories-we-tell-ourselves-coping-and-inner-worlds">The Stories We Tell Ourselves</a></li>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#frameworks-for-self-understanding-and-growth">Frameworks for Growth</a>
+                <ul>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#the-chakra-system">Chakra System</a></li>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#maslows-hierarchy-of-needs">Maslow's Hierarchy</a></li>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#carl-jungs-psychological-interpretation">Carl Jung's Interpretation</a></li>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#bridging-traditions-chakras-and-seven-deadly-sins">Chakras & Sins</a></li>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#taoism-harmony-flow-and-non-striving">Taoism</a></li>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#stoicism-and-the-gita---parallel-paths-of-wisdom">Stoicism & Gita</a></li>
+                    <li><a href="https://loud-whisper.github.io/inner-neutrality/#islamic-perspectives-submission-trust-and-inner-striving">Islamic Perspectives</a></li>
+                </ul>
+            </li>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#practical-steps-toward-inner-balance">Practical Steps</a></li>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#action-motivation-and-detachment">Action & Detachment</a></li>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#advanced-perspectives-on-the-path">Advanced Perspectives</a></li>
+            <li><a href="https://loud-whisper.github.io/inner-neutrality/#final-realization-neutrality-and-the-inner-battle">Final Realization</a></li>
+        </ul>
+    </div>
 
-            // --- Place the constructed element onto the page
-            document.getElementById('mindmap-anchor').appendChild(mindmapContainer);
+    <script>
+        // Simple timeout-based fallback
+        setTimeout(function() {
+            // Check if markmap loaded by looking for SVG elements
+            const markmapContainer = document.querySelector('.markmap');
+            const hasSVG = markmapContainer && markmapContainer.querySelector('svg');
+            
+            if (!hasSVG) {
+                console.log('Markmap failed to load, showing fallback');
+                document.querySelector('.markmap').style.display = 'none';
+                document.getElementById('fallback').style.display = 'block';
+            }
+        }, 3000); // Wait 3 seconds for markmap to load
 
-            // --- Load the autoloader script LAST ---
-            const autoloaderScript = document.createElement('script');
-            autoloaderScript.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader';
-            autoloaderScript.onload = function() {
-                console.log('Markmap autoloader loaded successfully');
-            };
-            autoloaderScript.onerror = function() {
-                console.error('Failed to load markmap autoloader');
-                // Fallback: show as plain text
-                document.getElementById('mindmap-anchor').innerHTML = 
-                    '<pre style="color: white; padding: 20px; font-family: monospace; overflow: auto; height: 100%; background: #0d1117;">' + 
-                    markdownContent + '</pre>';
-            };
-            document.head.appendChild(autoloaderScript);
-        });
+        // Load markmap autoloader
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/markmap-autoloader@0.15';
+        script.onload = function() {
+            console.log('Markmap autoloader loaded');
+        };
+        script.onerror = function() {
+            console.log('Markmap autoloader failed, showing fallback immediately');
+            document.querySelector('.markmap').style.display = 'none';
+            document.getElementById('fallback').style.display = 'block';
+        };
+        document.head.appendChild(script);
     </script>
 </body>
 </html>
