@@ -19,18 +19,16 @@ toc: true # This might or might not work depending on theme support, but is harm
 
   gtag('config', 'G-74BXJ8BSWH'); // Replace with your Measurement ID
 </script>
-
 {% raw %}
 <!-- START: Interactive Mind Map -->
 <style>
-/* This CSS styles the mind map container */
 #markmap-container {
-  border: 1px solid #444; /* A subtle border */
-  border-radius: 8px;      /* Rounded corners */
-  margin-bottom: 2em;      /* Space below the map */
-  padding: 0.5em;          /* Padding inside the border */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* A soft shadow effect */
-  background: #1c2128;     /* A dark background matching GitHub's theme */
+  border: 1px solid #444;
+  border-radius: 8px;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: #1c2128;
 }
 #markmap {
   display: block;
@@ -39,23 +37,20 @@ toc: true # This might or might not work depending on theme support, but is harm
 }
 </style>
 
-<!-- 1. The Container for the Mind Map -->
 <div id="markmap-container">
   <svg id="markmap"></svg>
 </div>
 
-<!-- 2. Load the Markmap JavaScript Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15.0/dist/browser.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0/dist/browser.min.js"></script>
 
-<!-- 3. Your Custom Script to Generate the Map -->
 <script>
-  (function() {
+  // This tells the script to wait until the full page is loaded before running.
+  document.addEventListener('DOMContentLoaded', function() {
     const { Transformer } = markmap;
     const { Markmap, loadCSS, loadJS } = markmap;
     const transformer = new Transformer();
 
-    // The Markdown structure for your mind map.
     const markdown = `
 # [Journey to Inner Neutrality](#journey-within-no-passport-required)
 - [Introduction](#introduction)
@@ -80,7 +75,7 @@ toc: true # This might or might not work depending on theme support, but is harm
     if (scripts) loadJS(scripts, { getMarkmap: () => Markmap });
 
     Markmap.create('#markmap', undefined, root);
-  })();
+  });
 </script>
 <!-- END: Interactive Mind Map -->
 {% endraw %}
