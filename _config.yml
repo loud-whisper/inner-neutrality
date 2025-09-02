@@ -7,7 +7,7 @@ baseurl: "/inner-neutrality"
 # ---------- plugins ----------
 plugins:
   - jekyll-remote-theme
-  # - jekyll-seo-tag  # Commented out this line
+  # - jekyll-seo-tag  # Commented out line
   # - jekyll-sitemap   # <--- COMMENT THIS ONE OUT NOW
 
 # GitHub Pages needs this key if you define plugins
